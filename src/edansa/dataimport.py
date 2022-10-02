@@ -113,7 +113,11 @@ class Audio():
         else:
             return self.data.copy(), self.sr
 
-    def load_info(self, row, excell_names2code=None, version='V2'):
+    def load_info(self,
+                  row,
+                  excell_names2code=None,
+                  version='V2',
+                  dataset_folder=None):
 
         fname = row['Clip Path']
         length = row['Length']
@@ -126,7 +130,8 @@ class Audio():
         length_time = datetime.strptime(length, '%H:%M:%S.%f')
         total_seconds = (length_time - length_time.replace(
             hour=0, minute=0, second=0, microsecond=0)).total_seconds()
-
+        if dataset_folder is not None:
+            fname = Path(dataset_folder) / fname
         self.path = Path(fname)
         self.name = self.path.name
         self.suffix = self.path.suffix
@@ -297,6 +302,7 @@ class Dataset(MutableMapping):
         dataset_cache_folder='',
         data_dict=None,
         excell_names2code=None,
+        dataset_folder=None,
     ):
         self.store = dict()
         if data_dict is not None:
@@ -306,6 +312,7 @@ class Dataset(MutableMapping):
         self.dataset_name_v = dataset_name_v
         self.excell_names2code = excell_names2code
         self.csv_path_or_rows = csv_path_or_rows
+        self.dataset_folder = dataset_folder
         if dataset_cache_folder == '':
             self.dataset_cache_folder = ''
         else:
@@ -314,7 +321,8 @@ class Dataset(MutableMapping):
             self.load_csv(self.csv_path_or_rows,
                           self.dataset_name_v,
                           self.dataset_cache_folder,
-                          excell_names2code=self.excell_names2code)
+                          excell_names2code=self.excell_names2code,
+                          dataset_folder=self.dataset_folder)
 
     def __getitem__(self, key):
         return self.store[self._keytransform(key)]
@@ -338,10 +346,13 @@ class Dataset(MutableMapping):
                  csv_path_or_rows,
                  dataset_name_v='',
                  dataset_cache_folder='',
-                 excell_names2code=None):
+                 excell_names2code=None,
+                 dataset_folder=None):
         """read path, len of megan labeled files from csv file, (lnength col.)
         store them in a dataimport.dataset, keys are gonna be sample file path
         """
+        if dataset_folder is None:
+            dataset_folder = self.dataset_folder
         # if excell_names2code is None and self.excell_names2code is None:
         #     raise ArgumentError('excell_names2code shoudl be provided')
         #src_path = '/scratch/enis/data/nna/labeling/megan/AudioSamplesPerSite/'
@@ -351,10 +362,14 @@ class Dataset(MutableMapping):
         else:
             dataset_rows = csv_path_or_rows[:]
         for row in dataset_rows:
-            fname = row['Clip Path']
+            if dataset_folder is not None:
+                fname = str(Path(dataset_folder) / row['Clip Path'])
+            else:
+                fname = row['Clip Path']
             self.store[fname] = Audio('', -1)
             self.store[fname].load_info(row,
-                                        excell_names2code=excell_names2code)
+                                        excell_names2code=excell_names2code,
+                                        dataset_folder=dataset_folder)
 
         # path has to be inque but is file names are unique ?
 

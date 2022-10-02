@@ -60,7 +60,9 @@ def prepare_dataset(dataset_in_memory=True, load_clipping=True):
         excell_names2code=excell_names2code,
         dataset_name_v=dataset_name_v,
         dataset_cache_folder=dataset_cache_folder,
-        load_clipping=load_clipping)
+        load_clipping=load_clipping,
+        dataset_folder=runconfigs.DATASET_FOLDER,
+    )
     if dataset_in_memory:
         audio_dataset.load_audio_files(runconfigs.AUDIO_DATA_CACHE_PATH)
     # audio_dataset.pick_channel_by_clipping()

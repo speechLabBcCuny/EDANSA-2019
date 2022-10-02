@@ -50,19 +50,20 @@ if not SAMPLES_FIXED_SIZE and DATA_FROM_DISK:
     raise ValueError('Cannot use DATA_FROM_DISK without SAMPLES_FIXED_SIZE')
 
 SAMPLING_RATE = 48000
-EXP_DIR = Path('./augmentV5/')
+EXP_DIR = Path('./')
 
 CATEGORY_COUNT = 9
 EXCERPT_LENGTH = 10
 MAX_MEL_LEN = 938  # old 850
 
-TAXONOMY_FILE_PATH = Path('assets/taxonomy/taxonomy_V2.yaml')
+TAXONOMY_FILE_PATH = Path('./assets/taxonomy/taxonomy_V2.yaml')
 
 DATASET_CACHE_FOLDER = Path('./datasetV5_cache/')
 
 AUDIO_DATA_CACHE_PATH = ''
 
-DATASET_CSV_PATH = ('assets/labels.csv')
+DATASET_CSV_PATH = ('./assets/labels.csv')
+DATASET_FOLDER = './assets/EDANSA-2019/data/'
 
 IGNORE_FILES = set([
     # 'S4A10268_20190610_103000_bio_anth.wav',  # has two topology bird/plane

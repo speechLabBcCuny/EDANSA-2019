@@ -25,7 +25,8 @@ from edansa import dataimport, taxoutils
 # %%
 def load_file_info2dataset(dataset_rows,
                            dataset_name_v='',
-                           dataset_cache_folder=''):
+                           dataset_cache_folder='',
+                           dataset_folder=None):
     """read path, len of megan labeled files from csv file, (lnength col.)
      store them in a dataimport.dataset, keys are gonna be sample file path 
     """
@@ -35,7 +36,8 @@ def load_file_info2dataset(dataset_rows,
 
     audio_dataset.load_csv(dataset_rows,
                            dataset_name_v=dataset_name_v,
-                           dataset_cache_folder=dataset_cache_folder)
+                           dataset_cache_folder=dataset_cache_folder,
+                           dataset_folder=dataset_folder)
 
     return audio_dataset
 
@@ -291,11 +293,12 @@ def run(
     dataset_cache_folder='',
     version='V2',
     load_clipping=True,
+    dataset_folder=None,
 ):
 
     dataset_rows = load_csv(dataset_csv_path)
     audio_dataset = load_file_info2dataset(dataset_rows, dataset_name_v,
-                                           dataset_cache_folder)
+                                           dataset_cache_folder, dataset_folder)
 
     megan_data_sheet, deleted_files = load_labeled_info(
         dataset_rows, audio_dataset, ignore_files=ignore_files)
