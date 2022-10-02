@@ -29,7 +29,7 @@ setup(
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name='megantaxo',  # Required
+    name='edansa',  # Required
 
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
@@ -139,19 +139,22 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
+
+    # if you like to know exact enviroment of the project, check the file:
+    # conda_env_snapshot.yml
     install_requires=[
-        'wandb',
-        'pytorch-ignite',
-        'torchaudio',
+        'wandb==0.10.15',
         'PyYAML>=5',
-        'pydub',
-        'torchvision',
+        'pytorch==1.7.1',
+        'torchaudio==0.7.2'
+        'ignite==0.4.2',
+        'torchvision==0.8.2',
+        'pydub==0.23.1',
         'scikit-learn==0.24.2',
-        'audiomentations',
-        'librosa',
-        'matplotlib',
-        'numpy',
-        
+        'audiomentations==0.17.0',
+        'librosa==0.8.0',
+        'matplotlib==3.3.2',
+        'numpy==1.19.2',
     ],  # Optional
 
     # List additional groups of dependencies here (e.g. development
