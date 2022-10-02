@@ -145,7 +145,7 @@ setup(
     install_requires=[
         'wandb==0.10.15',
         'PyYAML>=5',
-        'pytorch==1.7.1',
+        'torch==1.7.1',
         'torchaudio==0.7.2'
         'ignite==0.4.2',
         'torchvision==0.8.2',
