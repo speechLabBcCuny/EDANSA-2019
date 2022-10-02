@@ -15,7 +15,7 @@ python setup.py install develop
 
 # Download the data
 wget -O EDANSA-2019.zip  https://zenodo.org/record/6824272/files/EDANSA-2019.zip?download=1
-unzip assets/EDANSA-2019.zip -d assets/
+unzip EDANSA-2019.zip -d assets/
 
 # launch training
 python runs/augment/run.py
