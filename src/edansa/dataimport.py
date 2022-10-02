@@ -32,7 +32,7 @@ class Audio():
         location_id=None,
         region=None,
         data_version=None,
-        annotator=None,
+        # annotator=None,
         comments=None,
         original_recording_path=None,
         timestamps=None,
@@ -47,7 +47,7 @@ class Audio():
         self.region = region
         self.samples = []
         self.data_version = data_version
-        self.annotator = annotator
+        # self.annotator = annotator
         self.comments = comments
         self.original_recording_path = original_recording_path
         self.timestamps = timestamps  # (start,end)
@@ -135,10 +135,10 @@ class Audio():
         region = row['region'].strip().lower()
         self.location_id = site_id
         self.region = region
-        self.data_version = row['data_version']
-        self.annotator = row['Annotator']
-        self.comments = row['Comments']
-        self.original_recording_path = row['File Name']
+        self.data_version = row['batch']
+        # self.annotator = row['Annotator']
+        # self.comments = row['Comments']
+        # self.original_recording_path = row['File Name']
         self.timestamps = (start_time, end_time)
 
         if excell_names2code is not None:
@@ -258,12 +258,12 @@ class Audio():
         date_start = datetime.strftime(self.timestamps[0], '%m/%d/%Y')
 
         row = {
-            'data_version': self.data_version,
-            'Annotator': self.annotator,
+            'batch': self.data_version,
+            # 'Annotator': self.annotator,
             'region': self.region,
             'Site ID': self.location_id,
-            'Comments': self.comments,
-            'File Name': self.original_recording_path,
+            # 'Comments': self.comments,
+            # 'File Name': self.original_recording_path,
             'Date': date_start,
             'Start Time': start_time,
             'End Time': end_time,
