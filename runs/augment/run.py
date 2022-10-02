@@ -563,7 +563,7 @@ def run_exp(wandb_logger_ins):
 def main():
     wandb_project_name = runconfigs.PROJECT_NAME
     default_config = runconfigs.default_config
-    config = setup_config(default_config, wandb_project_name)
+    config = setup_config(default_config)
     config['run_id_2resume'] = config.get('run_id_2resume', '')
     config['checkpointfile_2resume'] = config.get('checkpointfile_2resume', '')
 
