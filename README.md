@@ -23,3 +23,14 @@ python runs/augment/run.py
 
 ## Configs
 Configs file is in runs/augment/runconfigs.py, you can change the parameters there.
+
+## Citation
+```
+@article{coban2022,
+  title     = {EDANSA-2019: The Ecoacoustic Dataset from Arctic North Slope Alaska},
+  author    = {Enis Berk Çoban,Megan Perra, Dara Pir,Michael I Mandel},
+  journal   = {IEEE Access},
+  year      = {2022}
+  publisher = {IEEE}
+}
+```
