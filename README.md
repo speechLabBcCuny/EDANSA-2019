@@ -26,11 +26,13 @@ Configs file is in runs/augment/runconfigs.py, you can change the parameters the
 
 ## Citation
 ```
-@article{coban2022,
-  title     = {EDANSA-2019: The Ecoacoustic Dataset from Arctic North Slope Alaska},
-  author    = {Enis Berk Çoban,Megan Perra, Dara Pir,Michael I Mandel},
-  journal   = {IEEE Access},
-  year      = {2022}
-  publisher = {IEEE}
+@inproceedings{Coban2022,
+    author = "Çoban, Enis Berk and Perra, Megan and Pir, Dara and Mandel, Michael I",
+    title = "EDANSA-2019: The Ecoacoustic Dataset from Arctic North Slope Alaska",
+    booktitle = "Proceedings of the Detection and Classification of Acoustic Scenes and Events 2022 Workshop (DCASE2022)",
+    address = "Nancy, France",
+    month = "November",
+    year = "2022",
+    abstract = "The arctic is warming at three times the rate of the global average, affecting the habitat and lifecycles of migratory species that reproduce there, like birds and caribou. Ecoacoustic monitoring can help efficiently track changes in animal phenology and behavior over large areas so that the impacts of climate change on these species can be better understood and potentially mitigated. We introduce here the Ecoacoustic Dataset from Arctic North Slope Alaska (EDANSA-2019), a dataset collected by a network of 100 autonomous recording units covering an area of 9000 square miles over the course of the 2019 summer season on the North Slope of Alaska and neighboring regions. We labeled over 27 hours of this dataset according to 28 tags with enough instances of 9 important environmental classes to train baseline convolutional recognizers. We are releasing this dataset and the corresponding baseline to the community to accelerate the recognition of these sounds and facilitate automated analyses of large-scale ecoacoustic databases."
 }
 ```
