@@ -29,7 +29,7 @@ Configs file is in runs/augment/runconfigs.py, you can change the parameters the
 @inproceedings{Coban2022,
     author = "Çoban, Enis Berk and Perra, Megan and Pir, Dara and Mandel, Michael I",
     title = "EDANSA-2019: The Ecoacoustic Dataset from Arctic North Slope Alaska",
-    booktitle = "Proceedings of the Detection and Classification of Acoustic Scenes and Events 2022 Workshop (DCASE2022)",
+    booktitle = "Proceedings of the 7th Detection and Classification of Acoustic Scenes and Events 2022 Workshop (DCASE2022)",
     address = "Nancy, France",
     month = "November",
     year = "2022",
