@@ -25,6 +25,10 @@ python runs/augment/run.py
 Configs file is in runs/augment/runconfigs.py, you can change the parameters there.
 
 ## Citation
+If you use the code from this repository or the dataset,
+you are kindly asked to cite the paper for which the information will be
+provided here upon publication in November 2022.
+
 ```
 @inproceedings{Coban2022,
     author = "Çoban, Enis Berk and Perra, Megan and Pir, Dara and Mandel, Michael I",
