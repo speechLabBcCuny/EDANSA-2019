@@ -78,7 +78,7 @@ def setup_config(config):
     np.random.seed(random_seed)
     random.seed(random_seed)
     torch.backends.cudnn.benchmark = False  # type: ignore
-    torch.set_deterministic(True)
+    # torch.set_deterministic(True)
 
     # wandb.init(config=runconfigs.default_config, project=runconfigs.PROJECT_NAME)
     # config = wandb.config
