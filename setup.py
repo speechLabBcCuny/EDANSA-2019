@@ -143,7 +143,6 @@ setup(
     # if you like to know exact enviroment of the project, check the file:
     # conda_env_snapshot.yml
     install_requires=[
-        'wandb==0.10.15',
         'PyYAML>=5',
         'torch==1.7.1',
         'torchaudio==0.7.2',
@@ -155,6 +154,7 @@ setup(
         'librosa==0.8.0',
         'matplotlib==3.3.2',
         'numpy==1.19.2',
+        'wandb==0.10.15',
     ],  # Optional
 
     # List additional groups of dependencies here (e.g. development
