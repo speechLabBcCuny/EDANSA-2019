@@ -362,14 +362,11 @@ class Dataset(MutableMapping):
         else:
             dataset_rows = csv_path_or_rows[:]
         for row in dataset_rows:
-            if dataset_folder is not None:
-                fname = str(Path(dataset_folder) / row['Clip Path'])
-            else:
-                fname = row['Clip Path']
-            self.store[fname] = Audio('', -1)
-            self.store[fname].load_info(row,
-                                        excell_names2code=excell_names2code,
-                                        dataset_folder=dataset_folder)
+            row_key = row['Clip Path']
+            self.store[row_key] = Audio('', -1)
+            self.store[row_key].load_info(row,
+                                          excell_names2code=excell_names2code,
+                                          dataset_folder=dataset_folder)
 
         # path has to be inque but is file names are unique ?
 
