@@ -11,7 +11,7 @@ cd EDANSA
 git init
 git pull https://github.com/speechLabBcCuny/EDANSA-2019
 # Install dependencies
-python setup.py install develop
+python3 -m pip install -e ./ 
 
 # Download the data
 wget -O EDANSA-2019.zip  https://zenodo.org/record/6824272/files/EDANSA-2019.zip?download=1
