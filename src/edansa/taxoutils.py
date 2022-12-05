@@ -99,6 +99,9 @@ def row2yaml_codev2(row, excell_names2code):
         'weas', 'hare', 'shrew'
     }
     row_lower = {k.lower(): v for k, v in row.items()}
+    for header in row_lower:
+        if header not in excell_class_names:
+            raise Exception(f'header {header} is not in excell_class_names')
 
     for excell_class_name in excell_class_names:
         # value is 1 or 0
