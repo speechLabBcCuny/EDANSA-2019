@@ -86,26 +86,10 @@ def row2yaml_codev2(row, excell_names2code):
         
     
     '''
-    # we are hard coding this because this function for a specific template
-    #
     yaml_codes = []
-    excell_class_names = {
-        'whim', 'amgp', 'shorebird', 'spsa', 'paja', 'hola', 'sngo', 'lalo',
-        'savs', 'wipt', 'nora', 'atsp', 'wisn', 'wfgo', 'sesa', 'glgu', 'bird',
-        'mam', 'loon', 'helo', 'auto', 'jet', 'corv', 'dgs', 'flare', 'bio',
-        'bear', 'crane', 'fly', 'airc', 'hum', 'truck', 'rain', 'bug', 'mosq',
-        'geo', 'mach', 'woof', 'deer', 'water', 'anth', 'songb', 'woop', 'car',
-        'rapt', 'sil', 'seab', 'wind', 'owl', 'meow', 'mous', 'prop', 'grous',
-        'weas', 'hare', 'shrew'
-    }
-    row_lower = {k.lower(): v for k, v in row.items()}
-    for header in row_lower:
-        if header not in excell_class_names:
-            print(f'WARNING: header {header} is not accepted as class name')
-
-    for excell_class_name in excell_class_names:
+    for excell_class_name in excell_names2code:
         # value is 1 or 0
-        class_exists_or_not = row_lower.get(excell_class_name, None)
+        class_exists_or_not = row.get(excell_class_name, None)
         # print(class_exists_or_not)
         class_exists_or_not = str(class_exists_or_not)
         if class_exists_or_not == '1':
